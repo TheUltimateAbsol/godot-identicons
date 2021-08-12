@@ -38,11 +38,6 @@ func generate_texture(byte : int) -> ImageTexture:
 	var color_array : Array = color_to_byte_array(color)
 	var clear_array : Array = color_to_byte_array(Color.transparent)
 	
-	print(get_bit(6, 0))
-	print(get_bit(6, 1))
-	print(get_bit(6, 2))
-	print(get_bit(6, 3))
-	
 	var data: Array = []
 
 	if rotated:
