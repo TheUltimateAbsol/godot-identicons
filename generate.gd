@@ -3,11 +3,17 @@ tool
 extends Sprite
 
 export(bool) var running = false setget set_running
+export(int) var number setget set_number
 
+func set_number(value):
+	number = value
+	texture = generate_texture(value)
+		
 func set_running(value):
 	running = value
 	if running:
-		texture = generate_texture(randi() % (1 << 32))
+		set_number(randi() % (1 << 32))
+		property_list_changed_notify()
 		running = false
 		
 func get_bit(byte : int, n) -> bool:
